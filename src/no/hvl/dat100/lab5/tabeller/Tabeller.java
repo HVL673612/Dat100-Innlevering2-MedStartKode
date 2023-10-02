@@ -5,8 +5,9 @@ public class Tabeller {
 	// a)
 	public static void skrivUt(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden skrivUt ikke implementert");
+		for(int i = 0; i <tabell.length; i++) {
+			System.out.println(i);
+		}
 
 	}
 
@@ -20,9 +21,15 @@ public class Tabeller {
 
 	// c)
 	public static int summer(int[] tabell) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden summer ikke implementert");
+		
+		int sum = 0;
+		int tempa;
+		for(int i = 0; i <tabell.length; i++) {
+			tempa = i;
+			sum = sum+tempa;
+		}
+		System.out.println(sum);
+		return sum;
 	}
 
 	// d)
