@@ -5,31 +5,72 @@ public class Matriser {
 	// a)
 	public static void skrivUt(int[][] matrise) {
 		
-		// TODO
-		throw new UnsupportedOperationException("Metoden skrivUt ikke implementert");
+		for (int [] rad: matrise) {
+			for(int element: rad) {
+				System.out.print(element + " ");
+			}
+			System.out.println();
+		}
 	}
 
 	// b)
 	public static String tilStreng(int[][] matrise) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
 		
-	}
+		String strMatrix = "";
+		//Row acros
+		for (int [] rad: matrise) {
+			//elements in row
+			for(int element: rad) {
+				//add ele i string
+				strMatrix += element;
+				// add space utenom når ele == sistete tallet i en rad
+				//kan bli broblem vis matrisen frk. {1, 2, 2} da ville denne kodden ikke ligetill mellomromm mellom
+				// 2 og 2. kan fikse med å alltid ligge mellomrom till, og fjerene mellomromet før \n med no mer kode
+				if (element != rad[rad.length-1]);{
+					strMatrix += " ";
+				}
+			}
+			//ny linje
+			strMatrix += "\n";
+		}
+		return strMatrix;
+	}		
 
 	// c)
 	public static int[][] skaler(int tall, int[][] matrise) {
-		
 		// TODO
-		throw new UnsupportedOperationException("Metoden skaler ikke implementert");
-	
+		//throw new UnsupportedOperationException("Metoden skaler ikke implementert");
+		int rows = matrise.length;
+		int colu = matrise[0].length;
+		int[][] skalertMatrix = new int [rows][colu];
+		
+		for(int i = 0; i < rows; i++ ) {
+			for( int j = 0; j < colu; j++) {
+				skalertMatrix[i][j] = matrise[i][j] * tall;
+			}
+		}
+		return skalertMatrix;
 	}
 
 	// d)
 	public static boolean erLik(int[][] a, int[][] b) {
 
 		// TODO
-		throw new UnsupportedOperationException("Metoden erLik ikke implementert");
+		//throw new UnsupportedOperationException("Metoden erLik ikke implementert");
+        // Sjekk om matrisene har samme antall rader og kolonner
+        if (a.length != b.length || a[0].length != b[0].length) {
+            return false; // Matrisene er ikke like hvis dimensjonene er ulike
+        }
+
+        // Sjekk element for element om matrisene er like
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a[i].length; j++) {
+                if (a[i][j] != b[i][j]) {
+                    return false; // Matrisene er ikke like hvis et element er ulikt
+                }
+            }
+        }
+        return true;
 	}
 	
 	// e)
