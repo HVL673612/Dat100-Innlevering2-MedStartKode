@@ -76,14 +76,32 @@ public class Matriser {
 	// e)
 	public static int[][] speile(int[][] matrise) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden speile ikke implementert");
+		int rows = matrise.length;
+		int colu = matrise[0].length;
+		int[][] speiletMatrix = new int [rows][colu];
+		
+		for(int i = 0; i < rows; i++ ) {
+			for( int j = 0; j < colu; j++) {
+				speiletMatrix[i][j] = matrise[j][i];
+			}
+		}
+		return speiletMatrix;
 	
 	}
 
 	// f)
 	public static int[][] multipliser(int[][] a, int[][] b) {
 
+		int RaderA = a.length;
+		int ColumA = a[0].length;
+		int RaderB = a.length;
+		int ColumB = a[0].length;
+		
+		// sjekke om Vi har lov å multiplisere to matriser hvis antall kolonner i den første matrisen er lik antall rekker i den andre
+		if(ColumA != RaderB) {
+			throw new IllegalArgumentException("feil størelse på matrisene");
+		}
+		int [][] MulPlyMatrix = new int[ColumA][RaderB];
 		// TODO
 		throw new UnsupportedOperationException("Metoden multipliser ikke implementert");
 	
