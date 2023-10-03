@@ -102,8 +102,8 @@ public class Matriser {
 			throw new IllegalArgumentException("feil størelse på matrisene");
 		}
 		int [][] MulPlyMatrix = new int[ColumA][RaderB];
-		// TODO
-		throw new UnsupportedOperationException("Metoden multipliser ikke implementert");
+//		// TODO
+//		throw new UnsupportedOperationException("Metoden multipliser ikke implementert");
 	
 	}
 }
