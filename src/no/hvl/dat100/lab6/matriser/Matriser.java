@@ -91,19 +91,22 @@ public class Matriser {
 
 	// f)
 	public static int[][] multipliser(int[][] a, int[][] b) {
-
-		int RaderA = a.length;
-		int ColumA = a[0].length;
-		int RaderB = a.length;
-		int ColumB = a[0].length;
+		if (a[0].length != b.length) {
+			throw new IllegalArgumentException("feil størelse på matrisene, nr i koloner i a == nr i rad i b");
+		        }
+		int[][] c = new int[a.length][b[0].length];
+  
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < b[0].length; j++) {
+					int sum = 0;
+		                for (int k = 0; k < a[0].length; k++) {
+		                    sum += a[i][k] * b[k][j];
+		                }
+		                c[i][j] = sum;
+					}
+				}
+		return c;
 		
-		// sjekke om Vi har lov å multiplisere to matriser hvis antall kolonner i den første matrisen er lik antall rekker i den andre
-		if(ColumA != RaderB) {
-			throw new IllegalArgumentException("feil størelse på matrisene");
-		}
-		int [][] MulPlyMatrix = new int[ColumA][RaderB];
-//		// TODO
-//		throw new UnsupportedOperationException("Metoden multipliser ikke implementert");
-	
+		}			
 	}
-}
+
